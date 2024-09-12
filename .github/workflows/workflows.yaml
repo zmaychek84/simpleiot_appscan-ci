@@ -19,12 +19,12 @@ jobs:
       - name: touch file
         run: touch /home/roman/AppScan/test_file
       - name: appscan-ci scripts run
-        run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
+        run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --useDocker True
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
-#         with:
-#           sarif_file: simpleiot/simpleIOT.sarif
-#           category: testing
+        with:
+          sarif_file: /home/roman/AppScan/sarifs/simpleiot-github.sarif
+          category: testing
       - name: PWD
         run: pwd
       - name: List folder
