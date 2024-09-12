@@ -14,6 +14,8 @@ jobs:
         run: git clone https://git.gtech.com/scm/appsec/appscan-ci.git
       - name: install python requirements
         run: python3.11 -m pip install -r appscan-ci/requirements.txt
+      - name: env variables configuration
+        run: set LOCAL_REPO=/home/roman/AppScan
       - name: appscan-ci scripts run
         run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
 #       - name: SimpleIOT test
