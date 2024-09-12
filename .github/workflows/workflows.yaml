@@ -16,6 +16,10 @@ jobs:
         run: python3.11 -m pip install -r appscan-ci/requirements.txt
       - name: env variables configuration
         run: export LOCAL_REPO=/home/roman/AppScan
+      - name: print env
+        run: env
+      - name: sleep
+        run: sleep 30
       - name: appscan-ci scripts run
         run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
 #       - name: SimpleIOT test
