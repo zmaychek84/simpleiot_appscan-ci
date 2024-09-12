@@ -14,18 +14,12 @@ jobs:
         run: git clone https://git.gtech.com/scm/appsec/appscan-ci.git
       - name: install python requirements
         run: python3.11 -m pip install -r appscan-ci/requirements.txt
-      - name: env variables configuration
-        run: export LOCAL_REPO=/home/roman/AppScan
-      - name: print env
-        run: env
-      - name: sleep
-        run: sleep 30
-      - name: appscan-ci scripts run
-        run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
-#       - name: SimpleIOT test
-#         run: docker run -i --rm --env-file /home/roman/env.list --add-host usriappscansv:10.253.160.244 --volume ./simpleiot:/simpleiot 10.253.160.58:5002/appscan/appscan-src-cli:latest script /simpleiot/SimpleIOT.scan
-#       - name: Sleep now
-#         run: sleep 60
+      - name: ls -alh /home/roman
+        run: ls -alh /home/roman
+      - name: touch file
+        run: touch /home/roman/AppScan/test_file
+#       - name: appscan-ci scripts run
+#         run: python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
 #       - name: Upload SARIF file
 #         uses: github/codeql-action/upload-sarif@v2
 #         with:
