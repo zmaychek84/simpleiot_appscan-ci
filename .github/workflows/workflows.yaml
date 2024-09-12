@@ -22,6 +22,8 @@ jobs:
 #           sarif_file: simpleiot/simpleIOT.sarif
 #           category: testing
       - name: PWD
-        run: pwd && ll
+        run: pwd
+      - name: List folder
+        run: ls -lh
       - name: Print goodbye
         run: echo "Done - bye!" 
