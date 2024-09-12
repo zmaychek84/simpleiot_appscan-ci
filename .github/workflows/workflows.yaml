@@ -11,10 +11,7 @@ jobs:
       - name: repo checkout
         uses: actions/checkout@v3
       - name: appscan-ci checkout
-        uses: actions/checkout@v3
-        with:
-          repository: https://git.gtech.com/scm/appsec/appscan-ci.git
-          path: './appscan-ci'
+        run: git clone https://git.gtech.com/scm/appsec/appscan-ci.git
 #       - name: SimpleIOT test
 #         run: docker run -i --rm --env-file /home/roman/env.list --add-host usriappscansv:10.253.160.244 --volume ./simpleiot:/simpleiot 10.253.160.58:5002/appscan/appscan-src-cli:latest script /simpleiot/SimpleIOT.scan
 #       - name: Sleep now
