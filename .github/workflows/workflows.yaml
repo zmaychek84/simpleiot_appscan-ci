@@ -13,7 +13,7 @@ jobs:
       - name: appscan-ci checkout
         run: git clone https://git.gtech.com/scm/appsec/appscan-ci.git
       - name: install python requirements
-        run: python3.10 -m pip install -r appscan-ci/requirements.txt
+        run: python3.11 -m pip install -r appscan-ci/requirements.txt
       - name: appscan-ci scripts run
         run: python3.10 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
 #       - name: SimpleIOT test
