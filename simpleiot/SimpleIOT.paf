@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application name="SimpleIOT" version="10.2.0">
+	<Projects>
+		<Project ltd_name="java" path=".\SimpleIOT.ppf"/>
+	</Projects>
+	<StringPool>
+		<String id="1"/>
+		<String id="2" value="SimpleIOT"/>
+		<String id="3" value="TestCase_IOT_Lost_XFile_Part1"/>
+		<String id="4" value="TestCase_IOT_Lost_XFile_Part1.getVulnerableSource"/>
+		<String id="5" value="TestCase_IOT_Lost_XFile_Part1.getVulnerableSource(java.lang.String):java.lang.String"/>
+		<String id="6" value="TestCase_IOT_Lost_XFile_Part1.main"/>
+		<String id="7" value="TestCase_IOT_Lost_XFile_Part1.main(java.lang.String[]):void"/>
+		<String id="8" value="TestCase_IOT_Lost_XFile_Part2"/>
+		<String id="9" value="TestCase_IOT_Lost_XFile_Part2.writeToUnknownSink"/>
+		<String id="10" value="TestCase_IOT_Lost_XFile_Part2.writeToUnknownSink(java.lang.String;java.lang.String):void"/>
+		<String id="11" value="Vulnerability.Validation.Required"/>
+		<String id="12" value="buf"/>
+		<String id="13" value="fis . java.io.FileInputStream.read ( buf )"/>
+		<String id="14" value="java.io.FileInputStream"/>
+		<String id="15" value="java.io.FileInputStream.read"/>
+		<String id="16" value="java.io.FileInputStream.read(byte[]):int"/>
+		<String id="17" value="java.lang.String"/>
+		<String id="18" value="java.lang.String.&lt;init&gt;"/>
+		<String id="19" value="java.lang.String.&lt;init&gt;(byte[]):void"/>
+		<String id="20" value="java.lang.System"/>
+		<String id="21" value="java.lang.System.setProperty"/>
+		<String id="22" value="java.lang.System.setProperty ( key, str )"/>
+		<String id="23" value="java.lang.System.setProperty(java.lang.String;java.lang.String):java.lang.String"/>
+		<String id="24" value="ret = new java.lang.String ( buf )"/>
+		<String id="25" value="return value"/>
+		<String id="26" value="source"/>
+		<String id="27" value="source = testCase . TestCase_IOT_Lost_XFile_Part1.getVulnerableSource ( file )"/>
+		<String id="28" value="str"/>
+		<String id="29" value="testCase2 . TestCase_IOT_Lost_XFile_Part2.writeToUnknownSink ( key, source )"/>
+	</StringPool>
+	<FilePool>
+		<File id="1" value=".\TestCase_IOT_Lost_XFile_Part1.java"/>
+		<File id="2" value=".\TestCase_IOT_Lost_XFile_Part2.java"/>
+	</FilePool>
+	<SitePool>
+		<Site caller="7" cn="3" cxt="27" file_id="1" id="1" language_type="2" ln="41" method="4" ord="1" sig="5"/>
+		<Site caller="1" cn="3" cxt="1" file_id="1" id="2" language_type="2" ln="41" method="6" ord="1" sig="7"/>
+		<Site caller="7" cn="8" cxt="29" file_id="1" id="3" language_type="2" ln="42" method="9" ord="1" sig="10"/>
+		<Site caller="5" cn="14" cxt="13" file_id="1" id="4" language_type="2" ln="51" method="15" ord="1" sig="16"/>
+		<Site caller="5" cn="17" cxt="24" file_id="1" id="5" language_type="2" ln="52" method="18" ord="1" sig="19"/>
+		<Site caller="10" cn="20" cxt="22" file_id="2" id="6" language_type="2" ln="24" method="21" ord="1" sig="23"/>
+	</SitePool>
+	<TaintPool>
+		<Taint arg="0" arg_name="25" dir="1" id="1" site_id="1" trace_type="1"/>
+		<Taint arg="-1" arg_name="1" dir="0" id="2" site_id="2" trace_type="6"/>
+		<Taint arg="3" arg_name="26" dir="2" id="3" site_id="3" trace_type="1"/>
+		<Taint arg="2" arg_name="12" dir="1" id="4" site_id="4" trace_type="2"/>
+		<Taint arg="2" arg_name="12" dir="2" id="5" site_id="5" trace_type="6"/>
+		<Taint arg="2" arg_name="28" dir="2" id="6" site_id="6" trace_type="3"/>
+	</TaintPool>
+	<FindingDataPool>
+		<FindingData ao_id="22" conf="2" id="1" mconf="1" project_name="2" prop_ids="542,589,605" rec_id="363" sev="0" site_id="6" vtype="11"/>
+	</FindingDataPool>
+	<FindingModifications exclusion="false" version="8.0.0">
+		<Finding data_id="1" trace="2,1,4.,5..,3,6.."/>
+	</FindingModifications>
+	<Findings exclusion="false" version="8.0.0">
+	</Findings>
+	<ApplicationScanSettings/>
+</Application>
