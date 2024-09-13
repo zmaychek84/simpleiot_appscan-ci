@@ -19,11 +19,11 @@ jobs:
           export LOCAL_REPO=/home/roman/AppScan
           export M2_REPO=/home/roman/.m2/repository
           python3.11 appscan-ci/scan.py -n simpleiot-github -s simpleiot --noCompileScan all --useDocker True
-#       - name: Upload SARIF file
-#         uses: github/codeql-action/upload-sarif@v2
-#         with:
-#           sarif_file: /home/roman/AppScan/sarifs/simpleiot-github.sarif
-#           category: testing
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: /home/roman/AppScan/simpleiot-github/sarifs/simpleiot-github.sarif
+          category: testing
       - name: PWD
         run: pwd
       - name: List folder
